@@ -33,17 +33,24 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>UpLoad Photo</ng-template>
-      <p>Your details.</p>
+      <hr>
+      <p>Your details :- </p>
       <p>UserName : {{userName }}</p>
       <p>Password : {{password}}</p>
       <p>Address : {{address}}</p>
+      <hr>
       
-      <app-file-uploader-progress-bar [fromParentToChild]="newUser" />       
+      <!---
+      <app-file-uploader-progress-bar [fromParentToChild]="newUser" /> 
+      ---->
+      <app-image-upload [fromParentToChild]="newUser" />      
 
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
+        <!--
         <button mat-button (click)="save()">Save</button>
+        -->
       </div>
     </mat-step>
   </mat-stepper>

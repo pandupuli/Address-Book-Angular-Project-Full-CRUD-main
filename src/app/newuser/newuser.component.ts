@@ -50,10 +50,10 @@ export class NewuserComponent implements OnInit {
     this.address = this.secondFormGroup.get('address')?.value;
 
     this.newUser = {
-      Id: 0,
-      UserName: this.firstFormGroup.controls['userName'].value as string,
-      Password: this.firstFormGroup.controls['password'].value as string,
-      Address: this.secondFormGroup.controls['address'].value as string,
+      id: 0,
+      userName: this.firstFormGroup.controls['userName'].value as string,
+      password: this.firstFormGroup.controls['password'].value as string,
+      address: this.secondFormGroup.controls['address'].value as string,
     };
   };
 

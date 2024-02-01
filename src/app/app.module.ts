@@ -32,6 +32,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FileUploaderProgressBarComponent } from './file-uploader-progress-bar/file-uploader-progress-bar.component';
 import { ImagePreviewComponent } from './image-preview/image-preview.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ImagePreviewComponent } from './image-preview/image-preview.component';
     DeleteDialogComponent,
     NewuserComponent,
     FileUploaderProgressBarComponent,
-    ImagePreviewComponent
+    ImagePreviewComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,

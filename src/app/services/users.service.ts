@@ -7,7 +7,7 @@ import { UserDetails } from '../interfaces/userDetails';
 export class UsersService {
 
   users : UserDetails [] = 
-    [{ Id: 1, UserName: 'John', Password: 'Johnson', Address: '111 Main St, Minneapolis, MN 55001' }];
+    [{ id: 1, userName: 'John', password: 'Johnson', address: '111 Main St, Minneapolis, MN 55001' }];
 
   constructor() { }
 
@@ -20,18 +20,18 @@ export class UsersService {
     // finding highest Id
     let highestId = 0;
     this.users.forEach(userObject => {
-      if (userObject.Id > highestId) {
-        highestId = userObject.Id;
+      if (userObject.id > highestId) {
+        highestId = userObject.id;
       }
     })
 
     // adding new user to array
     this.users.push(
       {
-        Id: highestId + 1,
-        UserName: newUser.UserName,
-        Password: newUser.Password,
-        Address: newUser.Address
+        id: highestId + 1,
+        userName: newUser.userName,
+        password: newUser.password,
+        address: newUser.address
       }
     );
     

@@ -40,12 +40,10 @@ export class FileUploaderProgressBarComponent implements OnInit {
   onSelectFile(event: any) {
 
     Array.from(event.target.files).forEach((file: any) => {
-      this.formData.append(file.name, file);
+      //this.formData.append(file.name, file);
       //get Base64 string    
       this.getBase64(file, (res: any) => {
-        // this.formData.append(file.name, res);
-        this.formData.append("MediaUpload", res);
-
+        this.formData.append(file.name, res);
         // display image preview
         this.selectedFiles.push({ name: file.name, value: res });
       })
@@ -73,16 +71,18 @@ export class FileUploaderProgressBarComponent implements OnInit {
 
 
   onUploadClick() {
-    this.hideprogressBar = false;
-   
-    this.formData.append( 'Info', JSON.stringify( this.fromParentToChild ) );
 
+    this.hideprogressBar = false;   
+    this.formData.append( 'Info', JSON.stringify( this.fromParentToChild ) );
     console.log(this.formData.get('Info'));
     console.log(this.formData.get('MediaUpload'));
 
     this.fileUploadService.uploadFile(this.formData).subscribe((res: any) => {
-      if (res.type === HttpEventType.Response) {
+      if (res.type === HttpEventType.Response) {        
         this.snackbar.open('Upload complete', "Okay", { duration: 5000 });
+      }
+      if(res.operationSuccess ){
+        alert("Upload successful.");
       }
       if (res.type === HttpEventType.UploadProgress) {
         this.percentDone = Math.round(100 * res.loaded / res.total);

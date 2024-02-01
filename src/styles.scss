@@ -2,3 +2,23 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.invalid-input {
+    border-color: red;
+ }
+ 
+ .panel-box {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-radius: 0.25rem;
+     
+    position: relative;
+    border: solid #dee2e6;
+    border-width: 1px;
+ }
+ 
+ .row-top-margin1 {
+     margin-top: 8px;
+ }
